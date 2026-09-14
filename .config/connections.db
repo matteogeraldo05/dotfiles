@@ -1,0 +1,4 @@
+[6da66018-a216-4454-bac9-f139193aea7a]
+protocol=rdp
+host=Windows-Desktop
+uri=rdp://Windows-Desktop:3389

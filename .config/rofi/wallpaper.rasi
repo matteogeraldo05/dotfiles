@@ -1,0 +1,163 @@
+/* Matteo Rofi Theme — Wallpaper Selector */
+
+configuration {
+    show-icons: true;
+}
+
+/* ---- Global Properties ---- */
+* {
+    background:                 rgba(0,0,0,0.7);
+    foreground:                 rgba(255,255,255,0.9);
+    background-alt:             #1A1022;
+    selected:                   rgba(255,255,255,0.9);
+    active:                     rgba(255,255,255,0.9);
+    urgent:                     #CC659A;
+    text-selected:              #000000;
+    text-color:                 #FFFFFF;
+}
+
+/* ---- Window ---- */
+window {
+    enabled:                    true;
+    fullscreen:                 false;
+    transparency:               "real";
+    cursor:                     "default";
+    spacing:                    0px;
+    border:                     2px;
+    border-radius:              30px;
+    border-color:               #ffffff;
+    location:                   center;
+    anchor:                     center;
+    width:                      65%;
+    background-color:           @background;
+}
+
+/* ---- Main Box ---- */
+mainbox {
+    padding:                    12px;
+    enabled:                    true;
+    orientation:                vertical;
+    children:                   [ "inputbar", "listview" ];
+    background-color:           transparent;
+}
+
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                    true;
+    padding:                    10px;
+    margin:                     10px;
+    background-color:           transparent;
+    border-radius:              20px;
+    orientation:                horizontal;
+    children:                   [ "entry" ];
+}
+
+/* ---- Entry ---- */
+entry {
+    enabled:                    true;
+    padding:                    10px;
+    border-radius:              12px;
+    background-color:           @active;
+    text-color:                 @text-selected;
+    cursor:                     text;
+    placeholder:                "Search wallpapers ";
+    placeholder-color:          inherit;
+}
+
+/* ---- Listview ---- */
+listview {
+    enabled:                    true;
+    columns:                    4;
+    lines:                      2;
+    cycle:                      true;
+    dynamic:                    true;
+    scrollbar:                  false;
+    layout:                     vertical;
+    reverse:                    false;
+    fixed-height:               true;
+    fixed-columns:              true;
+    spacing:                    10px;
+    margin:                     10px;
+    background-color:           transparent;
+    text-color:                 @foreground;
+    border:                     0px;
+}
+
+/* ---- Elements ---- */
+element {
+    enabled:                    true;
+    orientation:                vertical;
+    padding:                    10px;
+    spacing:                    10px;
+    border-radius:              12px;
+    background-color:           transparent;
+    cursor:                     pointer;
+}
+
+element normal.normal {
+    background-color:           inherit;
+    text-color:                 inherit;
+}
+element normal.urgent {
+    background-color:           @urgent;
+    text-color:                 @foreground;
+}
+element normal.active {
+    background-color:           @active;
+    text-color:                 @foreground;
+}
+
+element selected.normal {
+    border:                     2px;
+    border-radius:              16px;
+    border-color:               @active;
+    background-color:           transparent;
+    text-color:                 @selected;
+}
+element selected.urgent {
+    background-color:           @urgent;
+    text-color:                 @text-selected;
+}
+element selected.active {
+    background-color:           @urgent;
+    text-color:                 @text-selected;
+}
+
+element alternate.normal {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+element alternate.urgent {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+element alternate.active {
+    background-color:           transparent;
+    text-color:                 inherit;
+}
+
+element-icon {
+    /* size overridden at runtime via -theme-str */
+    size:                       20%;
+    border-radius:              16px;
+    horizontal-align:           0.5;
+    background-color:           transparent;
+    text-color:                 inherit;
+    cursor:                     inherit;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    cursor:                     inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0.5;
+}
+
+/* ---- Error Message ---- */
+error-message {
+    padding:                    12px;
+    border-radius:              20px;
+    background-color:           @background;
+    text-color:                 @foreground;
+}
